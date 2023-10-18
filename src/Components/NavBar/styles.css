@@ -1,0 +1,25 @@
+.navBar-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(24, 24, 24, 0.13) 
+}
+
+.navBar-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    list-style-type: none;
+}
+
+.category-button{
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+}
