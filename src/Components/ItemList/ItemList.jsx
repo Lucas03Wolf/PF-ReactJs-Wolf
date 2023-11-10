@@ -5,18 +5,23 @@ import { Link, useParams } from "react-router-dom";
 
 const ItemList = () => {
     const [items, setItems] = useState([]);
-    const { id } = useParams();
+    const { categoryId } = useParams();
 
-    const fetchProducts = () =>{
-        fetch('https://fakestoreapi.com/products')
-        .then((res)=> res.json())
-        .then((json)=> setItems(json))
-        .catch((error) => console.log(error));
+
+    const fetchProducts = async() => {
+        const response = await fetch('https://fakestoreapi.com/products');
+        const products = await response.json();
+        if(categoryId){
+            const filteredProducts = products.filter(prod => prod.category === categoryId);
+            setItems(filteredProducts);
+        } else {
+            setItems(products);
+        }
     };
 
     useEffect(() => {
         fetchProducts();
-    }, []);
+    }, [categoryId]);
     return (
         <div className="item-list-container">
         {items.map((item) => {
