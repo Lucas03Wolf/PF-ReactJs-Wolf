@@ -1,6 +1,6 @@
 import './styles.css'
 
-const Item = ({ title, description, price, image}) => {
+const Item = ({ title, description, price, image, quantity}) => {
     return (
         <div className='card-container'>
             <h6>{title}</h6>

@@ -1,13 +1,14 @@
 import './styles.css';
 import * as Icon from 'react-bootstrap-icons';
+import { CartContext } from '../../Context/CartContext';
+import { useContext } from 'react';
 
 const CartWidget = () => {
+    const {productQuantity} = useContext(CartContext) 
     return(
-        <div>
-            <Icon.Bag />
-            <div className='i   conCartView'>
-                <span>7</span>
-            </div>
+        <div className='iconCartView'>
+            <Icon.Bag className='icon'/>
+                <span>{productQuantity}</span>
         </div>
     )
 };
