@@ -18,18 +18,20 @@ const ItemDetail = ({ itemSelected }) => {
     };
 
     return (
-        <div>
+        <div className='item-detail'>
             <h6 className='card-title'>{itemSelected?.title}</h6>
             <img src={itemSelected?.image} alt={itemSelected?.title} width={70}/>
             <div className='card-description'>
                 <p>{itemSelected?.description}</p>
             </div>
-            <span>Stock: {stock}</span>
-            <p>${itemSelected?.price}</p>
+            <span className='stock'>Stock: {stock}</span>
+            <p className='price'>${itemSelected?.price}</p>
             <div>
-                <button onClick={handleNavigation}>Terminar mi compra</button>
-                <button onClick={addToCart}>Agregar al carrito</button>
                 <ItemCount count={count} setCount={setCount} stock={stock}/>
+                <div className='item-detail-button'>
+                    <button onClick={addToCart}>Agregar al carrito</button>
+                    <button onClick={handleNavigation}>Terminar mi compra</button>
+                </div>
             </div>
         </div>
     );

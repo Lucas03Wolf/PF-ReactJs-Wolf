@@ -1,3 +1,4 @@
+import './styles.css';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
@@ -21,9 +22,9 @@ const ItemDetailContainer = () => {
     }, []);
     
     return (
-        <div>
+        <div className="item-detail-container"> 
             {id && (
-            <div className="item-detail-container">
+            <div className='item-detail'>
                 <ItemDetail itemSelected={itemSelected} />
             </div>
         )}

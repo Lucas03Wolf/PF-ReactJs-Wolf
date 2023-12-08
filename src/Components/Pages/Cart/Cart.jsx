@@ -54,43 +54,49 @@ const Cart = () => {
         }
 
     return (
-        <div>
-            <h1>Carrito</h1>
-            <button onClick={clear}>Vaciar carrito</button>
-            <Form className='form'>
-                <Form.Group className='mb-3 formulario'>
-                    <Form.Label>Nombre</Form.Label>
-                    <Form.Control type='text' placeholder='Ingresa tu nombre' value={formValue.name} onChange={handleInput} name='name'/>
-                </Form.Group>
-                <Form.Group className='mb-3 formulario'>
-                    <Form.Label>Telefono</Form.Label>
-                    <Form.Control type='text' placeholder='Ingresa tu telefono' value={formValue.phone} onChange={handleInput} name='phone'/>
-                </Form.Group>
-                <Form.Group className='mb-3 formulario'>
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control type='text' placeholder='Ingresa tu email' value={formValue.email} onChange={handleInput} name='email'/>
-                </Form.Group>
-                <button onClick={createOrder} className='confirmar' type='submit' disabled={validateForm}>Confirmar compra</button>
-            </Form>
+        <div className='cartContainer'>
+            <div className='cart'>
+                <div className='aaa'>
+                <h1>Carrito</h1>
+                <button onClick={clear}>Vaciar carrito</button>
+                </div>
+                <div className='cartDetail'>
+                    <Form className='form'>
+                        <Form.Group className='mb-3 formulario'>
+                            <Form.Label>Nombre</Form.Label>
+                            <Form.Control type='text' placeholder='Ingresa tu nombre' value={formValue.name} onChange={handleInput} name='name'/>
+                        </Form.Group>
+                        <Form.Group className='mb-3 formulario'>
+                            <Form.Label>Telefono</Form.Label>
+                            <Form.Control type='text' placeholder='Ingresa tu telefono' value={formValue.phone} onChange={handleInput} name='phone'/>
+                        </Form.Group>
+                        <Form.Group className='mb-3 formulario'>
+                            <Form.Label>Email</Form.Label>
+                            <Form.Control type='text' placeholder='Ingresa tu email' value={formValue.email} onChange={handleInput} name='email'/>
+                        </Form.Group>
+                        <button onClick={createOrder} className='confirmar' type='submit' disabled={validateForm}>Confirmar compra</button>
+                    </Form>
 
-            {products.length > 0 ? 
-            <div className="cart-list-container">
-                {products.map((item) => {
-                return (
-                    <div key={item.id}>
-                        <Item
-                        title={item.title}
-                        description={item.description}
-                        price={item.price}
-                        image={item.image}
-                        />
-                        <h5>Cantidad: {item.quantity}</h5>
-                        <div className='button'><button onClick={() => removeItem(item.id)}>Eliminar</button></div>
-                    </div>
-                    );
-            })}
-        </div> : <h2>No hay productos en el carrito</h2>    
-        }
+                    {products.length > 0 ? 
+                        <div className="cart-list-container">
+                            {products.map((item) => {
+                            return (
+                                <div className='cart-card' key={item.id}>
+                                    <Item
+                                    title={item.title}
+                                    description={item.description}
+                                    price={item.price}
+                                    image={item.image}
+                                    quantity={item.quantity}
+                                    id={item.id}
+                                    />
+                                </div>
+                                );
+                            })}
+                        </div> : <h2>No hay productos en el carrito</h2>    
+                    }
+                </div>
+            </div>
         </div>
     );
 };

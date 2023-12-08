@@ -1,0 +1,8 @@
+.item-detail-container{
+    display: flex;
+    justify-content: center;
+}
+
+.item-detail{
+    max-width: 600px;
+}

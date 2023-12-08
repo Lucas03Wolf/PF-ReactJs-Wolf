@@ -2,8 +2,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: black;
 }
 
 .icon{
     margin-right: 5px;
+}
+
+.cartWidget{
+    text-decoration: none;
 }

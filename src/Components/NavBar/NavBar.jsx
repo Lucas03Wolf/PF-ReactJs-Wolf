@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import './styles.css';
 import CartWidget from '../CartWidget/CartWidget';
 import { Link } from 'react-router-dom';
@@ -19,7 +18,7 @@ const Navbar = () => {
                     <li><Link to={'/category/Airpods'} className='category-button'>Airpods</Link></li>
                 </ul>
             </div>
-            <Link to={'/cart'}><CartWidget /></Link>
+            <Link to={'/cart'} className='cartWidget'><CartWidget /></Link>
         </div>
     );
 };

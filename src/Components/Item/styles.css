@@ -1,11 +1,24 @@
 .card-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 auto;
-    height: 100%;
-    padding: 0.5rem;
+    box-shadow: 0 3px 8px 5px rgba(0, 0, 0, 0.151);
+    max-width: 300px;
+    margin-bottom: 20px;
     text-align: center;
-    width: 20%;
-    border: solid grey;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card-container img{
+    width: 90%;
+    height: 250px;
+    padding: 10px;
+    transition: all .1s;
+}
+
+.card-container img:hover{
+    transform: scale(1.1);
+    transition: all .1s;
+}
+
+.card-container h3{
+    font-weight: bold;
+    font-size: 150%;
 }
